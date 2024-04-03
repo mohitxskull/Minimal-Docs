@@ -17,6 +17,9 @@ const nextConfig = {
    */
   // output: 'export',
 
+  // Optional: Change the output directory `out` -> `dist`
+  // distDir: 'dist',
+
   // Configure `pageExtensions`` to include MDX files
   pageExtensions: ['mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below

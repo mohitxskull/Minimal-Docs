@@ -31,8 +31,8 @@ export const DocConfig: Config = {
     Description:
       "Minimal Docs empowers you to build beautiful and functional documentation that enhances your project's communication and user experience.",
 
-    Github: 'https://github.com/mohitxskull/Minimal',
-    Url: 'https://minimal-docs.vercel.app',
+    Github: 'https://github.com/XScale-Agency/Minimal-Docs',
+    Url: 'https://minimal-docs.xscale.agency',
     Twitter: 'mohitxskull',
   },
 };
