@@ -1,0 +1,114 @@
+# Installation & Setup
+
+To get started with Minimal Docs, follow these steps:
+
+1. Clone the repository:
+
+<Code>
+```bash
+git clone https://github.com/mohitxskull/Minimal
+```
+</Code>
+
+2. Navigate to the project directory:
+
+<Code>
+```bash
+cd Minimal
+```
+</Code>
+
+3. Install the dependencies:
+
+<Code>
+```bash
+yarn
+```
+</Code>
+
+4. Start the development server:
+
+<Code>
+```bash
+yarn dev
+```
+</Code>
+
+---
+
+## Documentation Configuration
+
+The documentation is configured using a `/src/config.ts` file. This file contains the following configuration:
+
+
+You can customize the documentation configuration by modifying the `DocConfig` object. You can
+add more groups and pages to the documentation by adding new objects to the `Group` array. Each 
+group object should have a `Name` property and a `Pages` array containing the pages for that group.
+
+File: [config.ts](https://github.com/mohitxskull/Minimal/blob/main/src/config.ts)
+
+### Extending the Config
+
+You can extend the configuration by adding more properties to the `DocConfig` type
+which is defined in `/src/lib/types.ts`. You can add more properties to the `Doc` object
+to customize the documentation further.
+
+---
+
+## Customizing the Theme
+
+The documentation theme is configured using a `/src/theme.ts` file. This file contains the following theme configuration:
+
+This is the default theme configuration for the documentation, For more detailed
+information on customizing the theme, refer to the [Mantine Documentation](https://mantine.dev/theming/theme-object/).
+
+File: [theme.tsx](https://github.com/mohitxskull/Minimal/blob/main/src/theme.tsx)
+
+### Font
+
+The default font used in the documentation is `Instrument Sans`.
+You can change the font by modifying the `fontFamily` property in the theme configuration.
+
+To use Google Fonts, you can import the font using the `next/font/google` package and set the `fontFamily` property to the imported font,
+Refer to [Next/Font](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) for more information on importing and
+using Google Fonts in Next.js.
+
+For Custom Font also use the same method as Google Fonts.
+
+<Code>
+```ts
+import localFont from 'next/font/local'
+ 
+// Font files can be colocated inside of `pages`
+const myFont = localFont({ src: './my-font.woff2' })
+ 
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <main className={myFont.className}>
+      <Component {...pageProps} />
+    </main>
+  )
+}
+```
+</Code>
+
+---
+
+## Custom Components
+
+You can create custom components for the documentation by adding them to the `/src/components/mdx` directory, And
+then import them in the `/src/mdx-components.tsx` file.
+
+Import them dynimically in the `/src/mdx-components.tsx` file else they will increase the initial bundel size of the application.
+
+File: [mdx-components.tsx](https://github.com/mohitxskull/Minimal/blob/main/src/mdx-components.tsx)
+
+## Static Assets
+
+You can add static assets like images, videos, and other files to the `/public` directory. These assets can be accessed using the `/` path.
+
+For example, if you have an image in the `/public/images` directory, you can access it using the `/images` path.
+
+* `/public/favicon.png` is the default favicon for the documentation.
+* `/public/og-banner.png` is the default Open Graph banner for the documentation. You can
+  customize this banner or use dynamic Open Graph images by putting the API URL in the `og:image` meta tag.
