@@ -1,6 +1,6 @@
 import React, { Children, useEffect, useState } from 'react';
 import { NavLink, Skeleton, Stack, Title } from '@mantine/core';
-import { Heading, getHeadings } from '../../lib/helpers/getHeadings';
+import { Heading, getHeadings } from '../../lib/helpers/get-headings';
 
 export const TableOfContents = () => {
   const [headings, setHeadings] = useState<Heading[]>([]);

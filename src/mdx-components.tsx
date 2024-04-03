@@ -4,6 +4,14 @@ import { CenterLoading } from './components/indie/center-loading';
 import type { MDXComponents } from 'mdx/types';
 import { Alert, Skeleton } from '@mantine/core';
 
+const MDXImageNative = dynamic(
+  () =>
+    import('./components/mdx/image-native').then((mod) => mod.MDXImageNative),
+  {
+    ssr: false,
+  }
+);
+
 const MDXDividerNative = dynamic(
   () =>
     import('./components/mdx/divider-native').then(
@@ -131,6 +139,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     a: MDXAnchorNative,
 
     hr: MDXDividerNative,
+
+    img: MDXImageNative,
 
     // Custom components
 

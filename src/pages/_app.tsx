@@ -16,7 +16,7 @@ import Head from 'next/head';
 import { MetaTagsComp } from '@/components/indie/meta-tags';
 import Script from 'next/script';
 import { getPageByPath } from '@/lib/data';
-import { DocConfig } from '@/config';
+import { AppConfig } from '@/config';
 import { DocTheme } from '@/theme';
 
 const DocsLayout = dynamic(
@@ -28,7 +28,7 @@ const DocsLayout = dynamic(
 );
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  const renderDocsShell = router.pathname.includes('/docs');
+  const renderDocsShell = router.pathname.includes(AppConfig.App.BasePath);
 
   const doc = getPageByPath(router.pathname);
 
@@ -51,7 +51,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
 
       <Head>
         <title>
-          {doc ? `${doc.Label} - ${DocConfig.Doc.Name}` : DocConfig.Doc.Name}
+          {doc ? `${doc.Label} - ${AppConfig.App.Name}` : AppConfig.App.Name}
         </title>
 
         {doc ? (
@@ -59,21 +59,21 @@ export default function App({ Component, pageProps, router }: AppProps) {
             <MetaTagsComp
               title={doc.Label}
               description={doc.Description}
-              siteName={DocConfig.Doc.Name}
-              url={`${DocConfig.Doc.Url}${doc.Href}`}
-              twitterHandle={DocConfig.Doc.Twitter}
-              image={`${DocConfig.Doc.Url}/og-banner.png`}
+              siteName={AppConfig.App.Name}
+              url={`${AppConfig.App.Url}${doc.Href}`}
+              twitterHandle={AppConfig.App.Twitter}
+              image={`${AppConfig.App.Url}/og-banner.png`}
             />
           </>
         ) : (
           <>
             <MetaTagsComp
-              title={`${DocConfig.Doc.Name}: ${DocConfig.Doc.TagLine}`}
-              description={DocConfig.Doc.Description}
-              siteName={DocConfig.Doc.Name}
-              url={DocConfig.Doc.Url}
-              twitterHandle={DocConfig.Doc.Twitter}
-              image={`${DocConfig.Doc.Url}/og-banner.png`}
+              title={`${AppConfig.App.Name}: ${AppConfig.App.TagLine}`}
+              description={AppConfig.App.Description}
+              siteName={AppConfig.App.Name}
+              url={AppConfig.App.Url}
+              twitterHandle={AppConfig.App.Twitter}
+              image={`${AppConfig.App.Url}/og-banner.png`}
             />
           </>
         )}

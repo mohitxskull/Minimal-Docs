@@ -6,7 +6,7 @@ To get started with Minimal Docs, follow these steps:
 
 <Code>
 ```bash
-git clone https://github.com/mohitxskull/Minimal
+git clone https://github.com/XScale-Agency/Minimal-Docs
 ```
 </Code>
 
@@ -41,17 +41,16 @@ yarn dev
 The documentation is configured using a `/src/config.ts` file. This file contains the following configuration:
 
 
-You can customize the documentation configuration by modifying the `DocConfig` object. You can
+You can customize the documentation configuration by modifying the `/src/config.ts` file. You can
 add more groups and pages to the documentation by adding new objects to the `Group` array. Each 
 group object should have a `Name` property and a `Pages` array containing the pages for that group.
 
-File: [config.ts](https://github.com/mohitxskull/Minimal/blob/main/src/config.ts)
+File: [config.ts](https://github.com/XScale-Agency/Minimal-Docs/blob/main/src/config.ts)
 
 ### Extending the Config
 
-You can extend the configuration by adding more properties to the `DocConfig` type
-which is defined in `/src/lib/types.ts`. You can add more properties to the `Doc` object
-to customize the documentation further.
+You can extend the configuration by making changes to the `/src/lib/zod/app-config.ts` file.
+This file contains the schema for the configuration object.
 
 ---
 
@@ -62,7 +61,7 @@ The documentation theme is configured using a `/src/theme.ts` file. This file co
 This is the default theme configuration for the documentation, For more detailed
 information on customizing the theme, refer to the [Mantine Documentation](https://mantine.dev/theming/theme-object/).
 
-File: [theme.tsx](https://github.com/mohitxskull/Minimal/blob/main/src/theme.tsx)
+File: [theme.tsx](https://github.com/XScale-Agency/Minimal-Docs/blob/main/src/theme.tsx)
 
 ### Font
 
@@ -101,7 +100,7 @@ then import them in the `/src/mdx-components.tsx` file.
 
 Import them dynimically in the `/src/mdx-components.tsx` file else they will increase the initial bundel size of the application.
 
-File: [mdx-components.tsx](https://github.com/mohitxskull/Minimal/blob/main/src/mdx-components.tsx)
+File: [mdx-components.tsx](https://github.com/XScale-Agency/Minimal-Docs/blob/main/src/mdx-components.tsx)
 
 ## Static Assets
 

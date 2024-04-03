@@ -55,6 +55,7 @@ export const MDXCode = (props: MDXCodeProps) => {
   return (
     <>
       <CodeHighlight
+        highlightOnClient
         style={{
           borderRadius: 'var(--mantine-radius-md)',
         }}

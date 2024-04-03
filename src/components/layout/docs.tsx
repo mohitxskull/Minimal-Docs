@@ -24,7 +24,7 @@ import { useRouter } from 'next/router';
 import { Children, useMemo } from 'react';
 import { TableOfContents } from '../indie/table-of-contents';
 import { Spotlight, SpotlightActionData, spotlight } from '@mantine/spotlight';
-import { DocConfig } from '@/config';
+import { AppConfig } from '@/config';
 import { IconGithub } from '../indie/github-icon';
 
 export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
@@ -85,7 +85,7 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
                 size="sm"
               />
               <Text size="xl" lh={1.1} fw="bold" component={Link} href="/">
-                {DocConfig.Doc.Name}
+                {AppConfig.App.Name}
               </Text>
             </Group>
 
@@ -117,7 +117,9 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
                 variant="transparent"
                 {...(colorScheme === 'light' ? { color: 'dark.9' } : {})}
                 component={Link}
-                href={DocConfig.Doc.Github}
+                href={AppConfig.App.Github}
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 <Box w={ICON_SIZE.LG + 5}>
                   <IconGithub />
@@ -130,7 +132,7 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
           <ScrollArea.Autosize type="never">
             <Stack mt="lg" gap="xs" p="md">
               {Children.toArray(
-                DocConfig.Group.map((group) => (
+                AppConfig.Group.map((group) => (
                   <>
                     <Title pl="lg" order={4}>
                       {group.Name}
@@ -170,12 +172,12 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
               <Divider />
 
               <Group justify="space-between">
-                <Text>© 2024 {DocConfig.Doc.Name}</Text>
+                <Text>© 2024 {AppConfig.App.Name}</Text>
 
                 <Button
                   variant="transparent"
                   component={Link}
-                  href={`${DocConfig.Doc.Github}/blob/main/src/pages${router.pathname}.mdx`}
+                  href={`${AppConfig.App.Github}blob/main/src/pages${router.pathname}.mdx`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

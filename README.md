@@ -24,7 +24,7 @@ This boilerplate is designed for ease of use. Follow the installation and config
 1. **Clone the Repository:**
 
 ```bash
-git clone https://github.com/mohitxskull/Minimal
+git clone https://github.com/XScale-Agency/Minimal-Docs
 ```
 
 2. **Install Dependencies:**
