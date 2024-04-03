@@ -1,6 +1,6 @@
 ## Minimal Docs: Big impact, small footprint
 
-**Minimal Docs** is a developer-friendly boilerplate built with ❤️ for creating **clean, informative, and user-friendly documentation**. It leverages the power of Mantine, Next.js, and TypeScript to provide a robust foundation for crafting modern and interactive docs.
+**Minimal Docs** is a developer-friendly boilerplate built for creating **clean, informative, and user-friendly documentation**. It leverages the power of Mantine, Next.js, and TypeScript to provide a robust foundation for crafting modern and interactive docs.
 
 **What makes Minimal Docs special?**
 
