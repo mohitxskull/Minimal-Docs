@@ -14,7 +14,7 @@ export const TableOfContents = () => {
     if (filteredHeadings.length === 0) {
       setTimeout(() => {
         setHeadings(getHeadings());
-      }, 1000);
+      }, 500);
     }
   }, [filteredHeadings]);
 
@@ -22,13 +22,6 @@ export const TableOfContents = () => {
     return (
       <Stack mt="lg" gap="xs" p="md">
         <Title order={4}>Table of contents</Title>
-
-        <Stack gap="xs">
-          <Skeleton height={25} />
-          <Skeleton height={25} />
-          <Skeleton height={25} />
-          <Skeleton height={25} />
-        </Stack>
       </Stack>
     );
   }

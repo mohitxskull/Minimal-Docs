@@ -4,6 +4,9 @@ import { CenterLoading } from './components/indie/center-loading';
 import type { MDXComponents } from 'mdx/types';
 import { Alert, Skeleton } from '@mantine/core';
 
+import { MDXHeading2Native } from './components/mdx/heading-2-native';
+import { MDXHeading3Native } from './components/mdx/heading-3-native';
+
 const MDXImageNative = dynamic(
   () =>
     import('./components/mdx/image-native').then((mod) => mod.MDXImageNative),
@@ -19,28 +22,6 @@ const MDXDividerNative = dynamic(
     ),
   {
     ssr: false,
-  }
-);
-
-const MDXHeading2Native = dynamic(
-  () =>
-    import('./components/mdx/heading-2-native').then(
-      (mod) => mod.MDXHeading2Native
-    ),
-  {
-    ssr: false,
-    loading: () => <Skeleton height="50px" />,
-  }
-);
-
-const MDXHeading3Native = dynamic(
-  () =>
-    import('./components/mdx/heading-3-native').then(
-      (mod) => mod.MDXHeading3Native
-    ),
-  {
-    ssr: false,
-    loading: () => <Skeleton height="50px" />,
   }
 );
 
