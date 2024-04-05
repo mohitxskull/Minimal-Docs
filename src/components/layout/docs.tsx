@@ -165,7 +165,7 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
           </ScrollArea.Autosize>
         </AppShell.Aside>
         <AppShell.Main>
-          <Container>
+          <Container size="lg">
             <Stack id="mdx">
               {children}
 

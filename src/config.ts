@@ -24,57 +24,6 @@ const AppConfigRaw: Config = {
         },
       ],
     },
-    {
-      Name: 'Components',
-      Pages: [
-        {
-          Label: 'Navbar',
-          Description: 'Customize the Navbar of Minimal Docs',
-        },
-        {
-          Label: 'Footer',
-          Description: 'Customize the Footer of Minimal Docs',
-        },
-        {
-          Label: 'Code Block',
-          Description: 'Customize the Code Block of Minimal Docs',
-        },
-      ],
-    },
-    {
-      Name: 'Advanced',
-      Pages: [
-        {
-          Label: 'SEO',
-          Description: 'Optimize Minimal Docs for Search Engines',
-        },
-        {
-          Label: 'Analytics',
-          Description: 'Track user behavior with Analytics',
-        },
-        {
-          Label: 'PWA',
-          Description: 'Make Minimal Docs a Progressive Web App',
-        },
-      ],
-    },
-    {
-      Name: 'Resources',
-      Pages: [
-        {
-          Label: 'Changelog',
-          Description: 'Stay up-to-date with the latest changes',
-        },
-        {
-          Label: 'Contributing',
-          Description: 'Contribute to Minimal Docs',
-        },
-        {
-          Label: 'License',
-          Description: 'Legal stuff about Minimal Docs',
-        },
-      ],
-    },
   ],
 
   App: {

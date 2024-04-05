@@ -61,7 +61,7 @@ export const MDXTab = ({ children, title }: TabProps) => {
 
       {Children.toArray(
         parseResult.data.map((tab, index) => (
-          <Tabs.Panel value={dashCase(title[index])}>
+          <Tabs.Panel value={dashCase(title[index])} mt="xs">
             {tab.props.children}
           </Tabs.Panel>
         ))

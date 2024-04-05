@@ -5,5 +5,11 @@ interface ErrorBlockProps {
 }
 
 export const MDXErrorBlock = ({ error }: ErrorBlockProps) => (
-  <CodeHighlight language="json" code={JSON.stringify(error, null, 2)} />
+  <CodeHighlight
+    style={(theme) => ({
+      borderRadius: theme.defaultRadius,
+    })}
+    language="json"
+    code={JSON.stringify(error, null, 2)}
+  />
 );
