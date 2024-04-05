@@ -43,6 +43,7 @@ export const MDXSideBySide = (props: MDXSideBySideProps) => {
           base: 1,
           md: 2,
         }}
+        spacing="xl"
       >
         <Stack justify="center">{parsedChildren.data[0].props.children}</Stack>
         <Stack justify="center">{parsedChildren.data[1].props.children}</Stack>
