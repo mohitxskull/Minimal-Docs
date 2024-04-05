@@ -1,22 +1,8 @@
-export type Page = {
-  Label: string;
-  Href: string;
-  Description: string;
-};
+import { z } from 'zod';
+import { AppConfigBaseZod, AppConfigZod } from './zod/app-config';
 
-export type DocConfig = {
-  Group: {
-    Name: string;
-    Pages: Page[];
-  }[];
+export type AppConfig = z.infer<typeof AppConfigBaseZod>;
 
-  Doc: {
-    Name: string;
-    TagLine: string;
-    Description: string;
-
-    Github: string;
-    Url: string;
-    Twitter: string;
-  };
-};
+export type Page = z.infer<
+  typeof AppConfigZod
+>['Group'][number]['Pages'][number];

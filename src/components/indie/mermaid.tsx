@@ -29,7 +29,7 @@ export const Mermaid = ({ chart }: MermaidProps) => {
       });
 
     mermaid.contentLoaded();
-  }, [colorScheme]);
+  }, [colorScheme, chart]);
 
   useEffect(() => {
     setTimeout(mermaid.contentLoaded, 0);

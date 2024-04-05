@@ -2,7 +2,7 @@ import { Children, useMemo } from 'react';
 import { z } from 'zod';
 import { MDXErrorBlock } from './error-block';
 import { Tabs } from '@mantine/core';
-import { toSlug } from '@/lib/helpers/toSlug';
+import { dashCase } from '@/lib/helpers/dash-case';
 
 interface TabProps {
   title: string[];
@@ -52,16 +52,16 @@ export const MDXTab = ({ children, title }: TabProps) => {
   }
 
   return (
-    <Tabs defaultValue={toSlug(title[0])}>
+    <Tabs defaultValue={dashCase(title[0])}>
       <Tabs.List>
         {Children.toArray(
-          title.map((tab) => <Tabs.Tab value={toSlug(tab)}>{tab}</Tabs.Tab>)
+          title.map((tab) => <Tabs.Tab value={dashCase(tab)}>{tab}</Tabs.Tab>)
         )}
       </Tabs.List>
 
       {Children.toArray(
         parseResult.data.map((tab, index) => (
-          <Tabs.Panel value={toSlug(title[index])}>
+          <Tabs.Panel value={dashCase(title[index])} mt="xs">
             {tab.props.children}
           </Tabs.Panel>
         ))

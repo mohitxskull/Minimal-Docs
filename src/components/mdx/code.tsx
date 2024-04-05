@@ -55,9 +55,7 @@ export const MDXCode = (props: MDXCodeProps) => {
   return (
     <>
       <CodeHighlight
-        style={{
-          borderRadius: 'var(--mantine-radius-md)',
-        }}
+        highlightOnClient
         language={parsedChildren.data.props.children.props.className}
         code={parsedChildren.data.props.children.props.children}
       />

@@ -4,5 +4,15 @@ interface MDXAnchorNativeProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 export const MDXAnchorNative = (props: MDXAnchorNativeProps) => {
-  return <Anchor href={props.href}>{props.children}</Anchor>;
+  const internal = props.href?.startsWith('/');
+
+  return (
+    <Anchor
+      href={props.href}
+      target={!internal ? '_blank' : '_self'}
+      rel={!internal ? 'noopener noreferrer' : undefined}
+    >
+      {props.children}
+    </Anchor>
+  );
 };

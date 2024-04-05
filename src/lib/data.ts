@@ -1,7 +1,7 @@
-import { DocConfig } from '@/config';
+import { AppConfig } from '@/config';
 import { Page } from './types';
 
-export const Pages: Page[] = DocConfig.Group.reduce(
+export const Pages: Page[] = AppConfig.Group.reduce(
   (acc, group) => acc.concat(group.Pages),
   [] as Page[]
 );

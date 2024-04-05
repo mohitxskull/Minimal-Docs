@@ -1,6 +1,7 @@
 import createMDX from '@next/mdx';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
+import remarkGfm from 'remark-gfm';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,6 +18,9 @@ const nextConfig = {
    */
   // output: 'export',
 
+  // Optional: Change the output directory `out` -> `dist`
+  // distDir: 'dist',
+
   // Configure `pageExtensions`` to include MDX files
   pageExtensions: ['mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below
@@ -25,7 +29,7 @@ const nextConfig = {
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
   options: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkMath, remarkGfm],
     rehypePlugins: [rehypeKatex],
   },
 });

@@ -2,7 +2,21 @@ import dynamic from 'next/dynamic';
 import { CenterLoading } from './components/indie/center-loading';
 
 import type { MDXComponents } from 'mdx/types';
-import { Alert, Skeleton } from '@mantine/core';
+import { Alert, Skeleton, Group, Blockquote, Stack, Table } from '@mantine/core';
+
+import { MDXHeading2Native } from './components/mdx/heading-2-native';
+import { MDXHeading3Native } from './components/mdx/heading-3-native';
+import { CodeHighlight } from '@mantine/code-highlight';
+import { MDXTab } from './components/mdx/tabs';
+import { MDXSideBySide } from './components/mdx/side-by-side';
+
+const MDXImageNative = dynamic(
+  () =>
+    import('./components/mdx/image-native').then((mod) => mod.MDXImageNative),
+  {
+    ssr: false,
+  }
+);
 
 const MDXDividerNative = dynamic(
   () =>
@@ -11,28 +25,6 @@ const MDXDividerNative = dynamic(
     ),
   {
     ssr: false,
-  }
-);
-
-const MDXHeading2Native = dynamic(
-  () =>
-    import('./components/mdx/heading-2-native').then(
-      (mod) => mod.MDXHeading2Native
-    ),
-  {
-    ssr: false,
-    loading: () => <Skeleton height="50px" />,
-  }
-);
-
-const MDXHeading3Native = dynamic(
-  () =>
-    import('./components/mdx/heading-3-native').then(
-      (mod) => mod.MDXHeading3Native
-    ),
-  {
-    ssr: false,
-    loading: () => <Skeleton height="50px" />,
   }
 );
 
@@ -132,6 +124,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     hr: MDXDividerNative,
 
+    img: MDXImageNative,
+
+    table: Table,
+    thead: Table.Thead,
+    tbody: Table.Tbody,
+    tr: Table.Tr,
+    th: Table.Th,
+
     // Custom components
 
     Comparison: MDXComparison,
@@ -146,11 +146,18 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Mer: MDXMermaid,
     MerM: MDXMermaidMultiple,
 
+    Tab: MDXTab,
+
+    SBS: MDXSideBySide,
+
     // Mantine components
 
     AreaChart: AreaChart,
-
+    Group: Group,
     Alert: Alert,
+    BQ: Blockquote,
+    Stack: Stack,
+    CodeMM: CodeHighlight,
 
     ...components,
   };

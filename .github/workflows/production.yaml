@@ -11,7 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: common
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - name: Cache Node Modules ( Yarn )
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/yarn
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information

@@ -1,4 +1,4 @@
-import { toSlug } from '@/lib/helpers/toSlug';
+import { dashCase } from '@/lib/helpers/dash-case';
 import { useRouter } from 'next/router';
 import { MDXErrorBlock } from './error-block';
 
@@ -20,7 +20,7 @@ export const MDXHeading3Native = (props: MDXHeading3NativeProps) => {
     );
   }
 
-  const slug = toSlug(String(props.children));
+  const slug = dashCase(String(props.children));
 
   return (
     <h3

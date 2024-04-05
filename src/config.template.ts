@@ -10,18 +10,6 @@ const AppConfigRaw: Config = {
           Label: 'Introduction',
           Description: 'Get started with Minimal Docs',
         },
-        {
-          Label: 'Installation & Setup',
-          Description: 'Install & setup Minimal Docs',
-        },
-        {
-          Label: 'Content',
-          Description: 'Add content to your documentation',
-        },
-        {
-          Label: 'Deployment',
-          Description: 'Deploy Minimal Docs to Anywhere 🚀',
-        },
       ],
     },
   ],

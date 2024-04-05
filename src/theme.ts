@@ -29,4 +29,28 @@ export const DocTheme = createTheme({
 
   primaryColor: 'brown',
   primaryShade: 9,
+
+  components: {
+    CodeHighlight: {
+      styles: {
+        root: {
+          borderRadius: 'md',
+        },
+        code: {
+          userSelect: 'text',
+        },
+      },
+    },
+
+    CodeHighlightTabs: {
+      styles: {
+        root: {
+          borderRadius: 'md',
+        },
+        code: {
+          userSelect: 'text',
+        },
+      },
+    },
+  },
 });

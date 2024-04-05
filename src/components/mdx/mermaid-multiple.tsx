@@ -2,7 +2,7 @@ import { Children, useMemo, useState } from 'react';
 import { z } from 'zod';
 import { MDXErrorBlock } from './error-block';
 import { Stack, Tabs } from '@mantine/core';
-import { toSlug } from '@/lib/helpers/toSlug';
+import { dashCase } from '@/lib/helpers/dash-case';
 import { MDXMermaidChildrenZod } from './mermaid';
 import { Mermaid } from '../indie/mermaid';
 
@@ -52,7 +52,7 @@ export const MDXMermaidMultiple = (props: MDXMermaidMultipleProps) => {
       <Tabs
         defaultValue={ActiveTab}
         onChange={(value) => {
-          setActiveTab(value ?? toSlug(props.title[0]));
+          setActiveTab(value ?? dashCase(props.title[0]));
         }}
       >
         <Tabs.List>

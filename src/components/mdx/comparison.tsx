@@ -8,7 +8,7 @@ import {
   Stack,
 } from '@mantine/core';
 
-interface ComparisonProps {
+interface MDXComparisonProps {
   children: React.ReactNode;
   title: [string, string];
 }
@@ -32,7 +32,7 @@ const childZod = z.array(
   })
 );
 
-export const MDXComparison = ({ children, title }: ComparisonProps) => {
+export const MDXComparison = ({ children, title }: MDXComparisonProps) => {
   const parseResult = useMemo(() => {
     return childZod.safeParse(Children.toArray(children));
   }, [children]);
